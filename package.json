@@ -1,5 +1,5 @@
 {
-  "name": "elast_alert",
+  "name": "@bitsensor/elastalert-kibana-plugin",
   "version": "0.0.0",
   "description": "This plugin is Kibana plugin UI for the alerting system ElastAlert.",
   "main": "index.js",
