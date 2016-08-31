@@ -2,6 +2,7 @@ import chrome from 'ui/chrome';
 import html from './index.html';
 import './less/app.less';
 import './controllers/root_controller';
+import './sections';
 
 chrome
     .setBrand({
