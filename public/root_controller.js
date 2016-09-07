@@ -13,4 +13,9 @@ modules
     const tabs = chrome.getTabs();
 
 
+  })
+  .config(function ($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('red')
+      .accentPalette('amber');
   });

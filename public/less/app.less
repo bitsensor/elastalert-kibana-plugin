@@ -1,3 +1,5 @@
+@import (reference) '~material-colors/dist/colors.less';
+
 .navbar-inverse .logo[aria-label*="ElastAlert"] {
   width: 285px;
 }
@@ -17,10 +19,34 @@ md-grid-list.list-shadow-margin {
   margin-bottom: 4px;
 }
 
-.file-icon-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 60px;
+.file-grid {
+  .file {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: row;
+    max-width: 100%;
+
+    .file-icon-container {
+      flex: 0 0 auto;
+      padding: 0 16px;
+      align-self: flex-start;
+      color: @md-dark-icons-active;
+
+      .file-icon {
+        font-size: 36px;
+        width: 36px;
+        text-align: center;
+      }
+    }
+
+    .file-name {
+      flex: 1 1 auto;
+      align-self: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0;
+      margin-right: 16px;
+    }
+  }
 }
