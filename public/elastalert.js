@@ -6,28 +6,28 @@ import './less/app.less';
 import './sections';
 
 const tabs = [
-    {
-        id: 'rules',
-        title: 'Rules'
-    }
+  {
+    id: 'rules',
+    title: 'Rules'
+  }
 ];
 
 routes.enable();
 routes.otherwise({
-    redirectTo: '/rules'
+  redirectTo: '/rules'
 });
 
 chrome
-    .setBrand({
-        logo: 'url(/plugins/elastalert/img/elastalert-logo-kibana.png) center no-repeat'
-    })
-    .setNavBackground('#212121')
-    .addApplicationClass('elastalert-app')
-    .setTabDefaults({
-        resetWhenActive: true,
-        lastUrlStore: window.sessionStore,
-        activeIndicatorColor: '#D14F4E'
-    })
-    .setTabs(tabs)
-    .setRootTemplate(html)
-    .setRootController('elastalert', 'elastalertRootController');
+  .setBrand({
+    logo: 'url(/plugins/elastalert/img/elastalert-logo-kibana.png) center no-repeat'
+  })
+  .setNavBackground('#212121')
+  .addApplicationClass('elastalert-app')
+  .setTabDefaults({
+    resetWhenActive: true,
+    lastUrlStore: window.sessionStore,
+    activeIndicatorColor: '#D14F4E'
+  })
+  .setTabs(tabs)
+  .setRootTemplate(html)
+  .setRootController('elastalert', 'elastalertRootController');

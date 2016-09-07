@@ -7,10 +7,10 @@ import routes from 'ui/routes';
 import modules from 'ui/modules';
 
 modules
-    .get('app/elastalert', ['ngMaterial'])
-    .controller('elastalertRootController', function ($scope, $location) {
-        this.$location = $location;
-        const tabs = chrome.getTabs();
+  .get('app/elastalert', ['ngMaterial'])
+  .controller('elastalertRootController', function ($scope, $location) {
+    this.$location = $location;
+    const tabs = chrome.getTabs();
 
-        
-    });
+
+  });
