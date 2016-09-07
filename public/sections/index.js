@@ -1,1 +1,1 @@
-import './history';
+import './rules';

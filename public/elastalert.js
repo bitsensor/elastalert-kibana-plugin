@@ -1,8 +1,21 @@
 import chrome from 'ui/chrome';
+import routes from 'ui/routes';
 import html from './index.html';
+import './root_controller';
 import './less/app.less';
-import './controllers/root_controller';
 import './sections';
+
+const tabs = [
+    {
+        id: 'rules',
+        title: 'Rules'
+    }
+];
+
+routes.enable();
+routes.otherwise({
+    redirectTo: '/rules'
+});
 
 chrome
     .setBrand({
@@ -10,19 +23,11 @@ chrome
     })
     .setNavBackground('#212121')
     .addApplicationClass('elastalert-app')
-    .setRootTemplate(html)
-    .setRootController('elastalert', 'elastalertRootController')
     .setTabDefaults({
         resetWhenActive: true,
         lastUrlStore: window.sessionStore,
         activeIndicatorColor: '#D14F4E'
     })
-    .setTabs([
-        {
-            id: 'overview',
-            title: 'Overview'
-        }, {
-            id: 'settings',
-            title: 'Settings'
-        }
-    ]);
+    .setTabs(tabs)
+    .setRootTemplate(html)
+    .setRootController('elastalert', 'elastalertRootController');

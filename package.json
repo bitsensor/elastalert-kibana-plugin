@@ -19,9 +19,9 @@
     "@elastic/plugin-helpers": "5.0.0-beta1"
   },
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-animate": "^1.5.8",
-    "angular-aria": "^1.5.8",
+    "angular": "1.4.7",
+    "angular-animate": "1.4.7",
+    "angular-aria": "1.4.7",
     "angular-material": "^1.1.0"
   }
 }
