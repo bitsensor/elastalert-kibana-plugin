@@ -4,9 +4,7 @@ import html from './index.html';
 
 modules
   .get('app/elastalert')
-  .directive('elastalertAppRules', function () {
-
-  });
+  .controller('elastalertRulesController', function ($scope, $http) {});
 
 routes.when('/rules', {
   template: html

@@ -1,5 +1,9 @@
+import schema from './server/config/schema';
+import ElastalertPluginServer from './server';
+
 export default function (kibana) {
   return new kibana.Plugin({
+    id: 'elastalert',
     uiExports: {
       app: {
         title: 'ElastAlert',
@@ -9,6 +13,11 @@ export default function (kibana) {
           return options;
         }
       }
+    },
+    config: schema,
+    init: function (server, options) {
+      let pluginServer = new ElastalertPluginServer(server, options);
+      pluginServer.start();
     }
   });
 };
