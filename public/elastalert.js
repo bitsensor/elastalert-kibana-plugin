@@ -1,7 +1,6 @@
 import chrome from 'ui/chrome';
 import routes from 'ui/routes';
 import html from './index.html';
-import 'material-design-iconic-font/dist/css/material-design-iconic-font.min.css';
 import './root_controller';
 import './less/app.less';
 import './sections';

@@ -1,1 +1,2 @@
-import './rules';
+import './rules/index';
+import './editor/index';

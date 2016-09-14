@@ -24,9 +24,12 @@
     "angular-animate": "1.4.7",
     "angular-aria": "1.4.7",
     "angular-material": "^1.1.0",
+    "angular-ui-codemirror": "^0.3.0",
     "boom": "^4.0.0",
+    "codemirror": "^5.18.2",
     "material-colors": "^1.1.1",
-    "material-design-iconic-font": "^2.2.0",
-    "micromatch": "^2.3.11"
+    "material-design-icons": "^3.0.1",
+    "micromatch": "^2.3.11",
+    "path": "^0.12.7"
   }
 }

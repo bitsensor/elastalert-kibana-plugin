@@ -1,5 +1,6 @@
 import micromatch from 'micromatch';
 import boom from 'boom';
+import path from 'path';
 
 export default class ElastalertPluginServer {
   constructor(server, options) {
@@ -18,14 +19,9 @@ export default class ElastalertPluginServer {
       handler: {
         proxy: {
           mapUri: function (request, callback) {
-
-            console.log('got', self._checkEndpointDisabled(request.params.path, request.method))
-
             if (self._checkEndpointDisabled(request.params.path, request.method)) {
-              console.log('sending forbidden');
               callback(boom.forbidden('This endpoint was disabled by the plugin.'), null);
             } else {
-              console.log('sending proxy');
               callback(null, `${baseUri}/${request.params.path || ''}`);
             }
           }
@@ -37,10 +33,6 @@ export default class ElastalertPluginServer {
   _checkEndpointDisabled(endpoint, method) {
     let disabledEndpoints = this._options.disabledEndpoints;
     let invalidPath = micromatch.isMatch;
-
-    console.log('disabled endpoints', disabledEndpoints);
-    console.log('endpoint', endpoint);
-    console.log('method', method);
 
     function invalidMethod(disabledMethods, method) {
       return disabledMethods.includes('*') || disabledMethods.includes(method.toLowerCase());

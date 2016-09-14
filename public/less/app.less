@@ -1,4 +1,4 @@
-@import (reference) '~material-colors/dist/colors.less';
+@import '~material-design-icons/iconfont/material-icons.css';
 
 .navbar-inverse .logo[aria-label*="ElastAlert"] {
   width: 285px;
@@ -9,44 +9,43 @@ md-content.main-content {
   flex-direction: column;
   flex: 1 0 auto;
   padding: 24px 15%;
-}
 
-md-grid-tile {
-  background-color: white;
-}
-
-md-grid-list.list-shadow-margin {
-  margin-bottom: 4px;
-}
-
-.file-grid {
-  .file {
+  .controller-wrapper {
     display: flex;
+    flex-direction: column;
     flex: 1 0 auto;
-    flex-direction: row;
-    max-width: 100%;
+  }
+}
 
-    .file-icon-container {
-      flex: 0 0 auto;
-      padding: 0 16px;
-      align-self: flex-start;
-      color: @md-dark-icons-active;
+@icon-font-size-small: 24px;
+@icon-font-size-medium: 36px;
+@icon-font-size-large: 48px;
 
-      .file-icon {
-        font-size: 36px;
-        width: 36px;
-        text-align: center;
-      }
-    }
+.mi-small {
+  font-size: @icon-font-size-small;
+}
 
-    .file-name {
-      flex: 1 1 auto;
-      align-self: center;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      min-width: 0;
-      margin-right: 16px;
-    }
+.mi-medium {
+  font-size: @icon-font-size-medium;
+}
+
+.mi-large {
+  font-size: @icon-font-size-large;
+}
+
+.mi-contain {
+  &.mi-small {
+    width: @icon-font-size-small;
+    height: @icon-font-size-small;
+  }
+
+  &.mi-medium {
+    width: @icon-font-size-medium;
+    height: @icon-font-size-medium;
+  }
+
+  &.mi-large {
+    width: @icon-font-size-large;
+    height: @icon-font-size-large;
   }
 }

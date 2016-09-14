@@ -1,0 +1,81 @@
+<div class="controller-wrapper" ng-controller="elastalertRulesController">
+
+  <md-toolaber>
+    <div class="md-toolbar-tools">
+      <h2>
+        <span>Rules Overview</span>
+      </h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="loadRules()">
+        <md-icon>refresh</md-icon>
+      </md-button>
+    </div>
+  </md-toolaber>
+  <md-progress-linear md-mode="indeterminate" ng-if="state === states.loading"></md-progress-linear>
+
+  <h2 class="md-title" ng-if="false">Folders</h2>
+  <md-grid-list
+    class="file-grid list-shadow-margin"
+    md-cols-xs="2"
+    md-cols-sm="4"
+    md-cols-md="6"
+    md-cols-gt-md="10"
+    md-row-height-gt-md="2:1"
+    md-row-height="4:2"
+    md-gutter="24px"
+    md-gutter-gt-sm="16px"
+    ng-if="false">
+    <md-grid-tile class="folder md-whiteframe-1dp"
+                  md-rowspan="1" md-colspan="2">
+      <div class="file">
+        <div class="file-icon-container">
+          <i class="file-icon zmdi zmdi-folder"></i>
+        </div>
+        <div class="file-name md-subhead">
+          Folder Name
+        </div>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile class="folder md-whiteframe-1dp"
+                  md-rowspan="1" md-colspan="2">
+      <div class="file">
+        <div class="file-icon-container">
+          <i class="file-icon zmdi zmdi-folder"></i>
+        </div>
+        <div class="file-name md-subhead">
+          Folder with really long name
+        </div>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
+  <md-grid-list
+    class="file-grid list-shadow-margin"
+    md-cols-xs="2"
+    md-cols-sm="4"
+    md-cols-md="6"
+    md-cols-gt-md="10"
+    md-row-height-gt-md="2:1"
+    md-row-height="4:2"
+    md-gutter="24px"
+    md-gutter-gt-sm="16px"
+    ng-if="state === states.finished">
+    <md-grid-tile class="grid-item"
+                  md-rowspan="1"
+                  md-colspan="2"
+                  ng-repeat="rule in rules"
+                  ng-click="selectRule(rule)"
+                  ng-dblclick="openRuleEditor(rule)"
+                  ng-class="{ 'selected md-whiteframe-5dp': selectedRules.includes(rule),
+                              'md-whiteframe-1dp': !selectedRules.includes(rule)}">
+      <div class="file">
+        <div class="file-icon-container">
+          <md-icon class="mi-medium mi-contain">report</md-icon>
+        </div>
+        <div class="file-name md-subhead">
+          {{ rule }}
+        </div>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
+
+</div>

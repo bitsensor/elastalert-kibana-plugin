@@ -1,0 +1,14 @@
+<div class="controller-wrapper" ng-controller="elastalertEditorController">
+  <md-toolaber>
+    <div class="md-toolbar-tools">
+      <h2>
+        <span>Editing {{ ruleName }}</span>
+      </h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="loadRules()">
+        <md-icon>refresh</md-icon>
+      </md-button>
+    </div>
+  </md-toolaber>
+  <div ui-codemirror="editorOptions" class="code-editor" ng-model="ruleContent"></div>
+</div>
