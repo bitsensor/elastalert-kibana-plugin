@@ -2,10 +2,16 @@
 
   <md-toolaber>
     <div class="md-toolbar-tools">
+      <md-button class="md-icon-button">
+        <md-icon>home</md-icon>
+      </md-button>
       <h2>
         <span>Rules Overview</span>
       </h2>
       <span flex></span>
+      <md-button class="md-icon-button" ng-click="deleteRules($event, selectedRules)" ng-if="selectedRules.length > 0">
+        <md-icon>delete</md-icon>
+      </md-button>
       <md-button class="md-icon-button" ng-click="loadRules()">
         <md-icon>refresh</md-icon>
       </md-button>
@@ -66,13 +72,26 @@
                   ng-click="selectRule(rule)"
                   ng-dblclick="openRuleEditor(rule)"
                   ng-class="{ 'selected md-whiteframe-5dp': selectedRules.includes(rule),
-                              'md-whiteframe-1dp': !selectedRules.includes(rule)}">
+                              'md-whiteframe-1dp': !selectedRules.includes(rule) }">
       <div class="file">
         <div class="file-icon-container">
-          <md-icon class="mi-medium mi-contain">report</md-icon>
+          <md-icon class="mi-small mi-contain">report</md-icon>
         </div>
         <div class="file-name md-subhead">
           {{ rule }}
+        </div>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile class="grid-item md-whiteframe-1dp"
+                  md-rowspan="1"
+                  md-colspan="2"
+                  ng-click="newRule()">
+      <div class="file">
+        <div class="file-icon-container">
+          <md-icon class="mi-small mi-contain">add</md-icon>
+        </div>
+        <div class="file-name md-subhead">
+          New Rule
         </div>
       </div>
     </md-grid-tile>

@@ -1,9 +1,55 @@
 @import (reference) '~material-colors/dist/colors.less';
 
+.editor-wrapper {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+
+  .left-wrap,
+  .right-wrap {
+    transition: all 0.5s 0.2s;
+    display: flex;
+    flex: 0 0 15%;
+    background-color: @md-blue-grey-800;
+  }
+
+  &.expand-right {
+    .left-wrap,
+    .right-wrap {
+      transition: all 0.5s;
+    }
+
+    .left-wrap {
+      flex-basis: 0;
+    }
+
+    .right-wrap {
+      flex-basis: 40%;
+    }
+
+    .editor-console-view {
+      pointer-events: auto;
+
+      .console-output {
+        transition: top 0.2s 0.7s, opacity 0.2s 0.7s;
+        top: 0;
+        opacity: 1;
+      }
+
+      md-toolbar {
+        transition: all 0.2s 0.5s;
+        top: 0;
+        opacity: 1;
+      }
+    }
+  }
+}
+
 .code-editor {
   position: relative;
   display: flex;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
+  transition: all 0.5s;
 
   .CodeMirror {
     position: absolute;
@@ -12,6 +58,49 @@
     right: 0;
     bottom: 0;
     height: auto;
+
+    .CodeMirror-overlayscroll-horizontal div,
+    .CodeMirror-overlayscroll-vertical div {
+      background-color: @md-blue-grey-600;
+    }
+
+    .CodeMirror-overlayscroll-vertical div {
+      margin-right: 4px;
+    }
   }
 }
 
+.editor-console-view {
+  pointer-events: none;
+  display: flex;
+  flex: 0 1 100%;
+  flex-direction: column;
+  padding: 24px;
+
+  .console-output {
+    position: relative;
+    display: flex;
+    flex: 1 1 0;
+    background-color: transparent;
+    overflow-y: auto;
+    border: none;
+    color: @md-light-text-secondary;
+    white-space: pre-wrap;
+    font-size: inherit;
+    word-break: normal;
+    top: -6px;
+    opacity: 0;
+    transition: top 0.2s, opacity 0.2s;
+
+    &.error-output {
+      color: @md-red-500;
+    }
+  }
+
+  md-toolbar {
+    position: relative;
+    top: -6px;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+}

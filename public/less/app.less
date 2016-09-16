@@ -1,4 +1,5 @@
 @import '~material-design-icons/iconfont/material-icons.css';
+@import (reference) '~material-colors/dist/colors.less';
 
 .navbar-inverse .logo[aria-label*="ElastAlert"] {
   width: 285px;
@@ -7,13 +8,27 @@
 md-content.main-content {
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
-  padding: 24px 15%;
+  padding: 0 15%;
 
   .controller-wrapper {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
+    padding: 0;
+
+    &.wrap-bottom {
+      margin-bottom: -24px;
+      padding-bottom: 0;
+    }
+
+    &.wrap-full {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0;
+    }
   }
 }
 
@@ -47,5 +62,20 @@ md-content.main-content {
   &.mi-large {
     width: @icon-font-size-large;
     height: @icon-font-size-large;
+  }
+}
+
+md-toolbar.toolbar-transparent {
+  background-color: transparent;
+}
+
+md-toast.toast-dark-background {
+  .md-toast-content {
+    background-color: white;
+    color: @md-dark-text-primary;
+
+    .md-button {
+      color: @md-dark-text-primary;
+    }
   }
 }
