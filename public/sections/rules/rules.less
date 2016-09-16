@@ -1,0 +1,61 @@
+@import (reference) '~material-colors/dist/colors.less';
+
+md-grid-tile {
+  background-color: white;
+}
+
+md-grid-list.list-shadow-margin {
+  margin-bottom: 4px;
+}
+
+.file-grid {
+  .grid-item {
+    .file {
+      display: flex;
+      flex: 1 0 auto;
+      flex-direction: row;
+      max-width: 100%;
+
+      md-icon {
+        transition: color 0.2s;
+      }
+
+      .file-icon-container {
+        flex: 0 0 auto;
+        padding: 0 16px;
+        align-self: flex-start;
+      }
+
+      .file-name {
+        flex: 1 1 auto;
+        align-self: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 0;
+        margin-right: 16px;
+      }
+    }
+
+    &.selected {
+      .file md-icon {
+        color: white;
+      }
+    }
+  }
+}
+
+.grid-item {
+  transition: background-color 0.2s, color 0.2s;
+
+  &.selected {
+    background-color: @md-blue-500;
+    color: white;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}

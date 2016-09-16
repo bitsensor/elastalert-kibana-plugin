@@ -1,30 +1,23 @@
-import exampleRoute from './server/routes/example';
+import schema from './server/config/schema';
+import ElastalertPluginServer from './server';
 
 export default function (kibana) {
   return new kibana.Plugin({
-    require: ['elasticsearch'],
-
+    id: 'elastalert',
     uiExports: {
       app: {
-        title: 'Elast Alert',
-        description: 'This plugin is Kibana plugin UI for the alerting system ElastAlert.',
-        main: 'plugins/elast_alert/app'
-      },
-      hacks: [
-        'plugins/elast_alert/hack'
-      ]
+        title: 'ElastAlert',
+        description: 'This is a Kibana plugin for the alerting system ElastAlert.',
+        main: 'plugins/elastalert/elastalert',
+        injectVars: function (server, options) {
+          return options;
+        }
+      }
     },
-
-    config(Joi) {
-      return Joi.object({
-        enabled: Joi.boolean().default(true),
-      }).default();
-    },
-
-    init(server, options) {
-      // Add server routes and initalize the plugin here
-      exampleRoute(server);
+    config: schema,
+    init: function (server, options) {
+      let pluginServer = new ElastalertPluginServer(server, options);
+      pluginServer.start();
     }
-
   });
 };
