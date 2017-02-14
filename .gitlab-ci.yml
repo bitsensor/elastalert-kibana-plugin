@@ -14,7 +14,7 @@ build:
     - npm run build --quiet
   artifacts:
     paths:
-      - build/*
+      - build/*.zip
 
 mirror:github:
   image: debian
