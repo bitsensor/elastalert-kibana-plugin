@@ -1,5 +1,16 @@
 stages:
+  - build
   - mirror
+
+build:
+  image: node
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - build
 
 mirror:github:
   image: debian
