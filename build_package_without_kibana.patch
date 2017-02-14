@@ -1,0 +1,16 @@
+Index: node_modules/@elastic/plugin-helpers/tasks/build/create_build.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- node_modules/@elastic/plugin-helpers/tasks/build/create_build.js	(revision )
++++ node_modules/@elastic/plugin-helpers/tasks/build/create_build.js	(revision )
+@@ -11,7 +11,7 @@
+ 
+ module.exports = function createBuild(plugin, buildTarget, buildVersion, kibanaVersion, files) {
+   var buildSource = plugin.root;
+-  var buildRoot = join(buildTarget, 'kibana', plugin.id);
++  var buildRoot = join(buildTarget, plugin.id);
+ 
+   return del(buildTarget)
+     .then(function () {
