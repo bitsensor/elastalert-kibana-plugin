@@ -33,7 +33,6 @@
     "boom": "^4.0.0",
     "codemirror": "^5.18.2",
     "material-colors": "^1.1.1",
-    "material-design-icons": "^3.0.1",
     "micromatch": "^2.3.11",
     "path": "^0.12.7"
   }
