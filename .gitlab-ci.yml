@@ -6,11 +6,11 @@ build:
   image: node
   stage: build
   script:
-    - npm install
-    - npm run build
+    - npm install --quiet
+    - npm run build --quiet
   artifacts:
     paths:
-      - build
+      - build/*
 
 mirror:github:
   image: debian
