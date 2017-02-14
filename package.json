@@ -2,7 +2,10 @@
   "name": "elastalert",
   "version": "0.0.0",
   "description": "This plugin is Kibana plugin UI for the alerting system ElastAlert.",
-  "main": "index.js",
+  "main": "index.js",  
+  "kibana": {
+    "version": "kibana"
+  },
   "scripts": {
     "lint": "eslint",
     "start": "plugin-helpers start",
@@ -13,10 +16,11 @@
   },
   "devDependencies": {
     "@elastic/eslint-config-kibana": "0.0.2",
+    "@elastic/plugin-helpers": "^6.0.0",
     "babel-eslint": "4.1.8",
+    "chai": "^3.5.0",
     "eslint": "1.10.3",
-    "eslint-plugin-mocha": "1.1.0",
-    "@elastic/plugin-helpers": "5.0.0-beta1"
+    "eslint-plugin-mocha": "1.1.0"
   },
   "dependencies": {
     "@bitsensor/elastalert": "^0.0.5",
