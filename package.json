@@ -8,23 +8,22 @@
   },
   "scripts": {
     "lint": "eslint",
+    "start": "plugin-helpers start",
     "test:server": "plugin-helpers test_server",
-    "test:browser": "plugin-helpers test_browser"
+    "test:browser": "plugin-helpers test_browser",
+    "build": "plugin-helpers build",
+    "postinstall": "plugin-helpers postinstall"
   },
   "devDependencies": {
-    "@elastic/eslint-config-kibana": "0.3.0",
-    "babel-eslint": "7.1.1",
+    "@elastic/eslint-config-kibana": "0.0.2",
+    "@elastic/plugin-helpers": "^6.0.0",
+    "babel-eslint": "4.1.8",
     "chai": "^3.5.0",
-    "eslint": "3.15.0",
-    "eslint-plugin-mocha": "4.8.0",
-    "gulp": "^3.9.0",
-    "gulp-eslint": "^3.0.1",
-    "gulp-zip": "4.0.0",
-    "gulp-util": "^3.0.7",
-    "rsync": "^0.6.1"
+    "eslint": "1.10.3",
+    "eslint-plugin-mocha": "1.1.0"
   },
   "dependencies": {
-    "@bitsensor/elastalert": "^0.0.6",
+    "@bitsensor/elastalert": "^0.0.5",
     "angular": "1.4.7",
     "angular-animate": "1.4.7",
     "angular-aria": "1.4.7",
