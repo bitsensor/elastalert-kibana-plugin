@@ -1,25 +1,25 @@
-# elast_alert
+# ElastAlert Kibana plugin
 
-> This plugin is Kibana plugin UI for the alerting system ElastAlert.
+## Installation from build
+```bash
+./bin/kibi plugin -i elastalert -u https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/5251/artifacts/file/build/elastalert-0.0.6.zip
+```
 
----
+Append to the `config/kibana.yml` file the host of ElastAlert server. 
+elastalert.serverHost: localhost
 
-## development
+## Building artifact from source
 
-See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md) for instructions setting up your development environment. Once you have completed that, use the following npm tasks.
+```bash
+npm run build
+```
 
-<dl>
-  <dt><code>npm start</code></dt>
-  <dd>Start kibana and have it include this plugin</dd>
+## Development
+Run the browser tests in a real web browser, or mocha. 
+```bash
+npm run test:browser
+npm run test:server
+```
 
-  <dt><code>npm run build</code></dt>
-  <dd>Build a distributable archive</dd>
-
-  <dt><code>npm run test:browser</code></dt>
-  <dd>Run the browser tests in a real web browser</dd>
-
-  <dt><code>npm run test:server</code></dt>
-  <dd>Run the server tests using mocha</dd>
-</dl>
-
-For more information about any of these commands run `npm run ${task} -- --help`.
+## Kibana Plugin Development
+See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md) for instructions setting up your development environment. Once you have completed that, use the following npm tasks within Kibana.
