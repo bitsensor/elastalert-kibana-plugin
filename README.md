@@ -6,7 +6,9 @@
 ```
 
 Append to the `config/kibana.yml` file the host of ElastAlert server. 
+```
 elastalert.serverHost: localhost
+```
 
 ## Building artifact from source
 
