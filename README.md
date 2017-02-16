@@ -2,7 +2,7 @@
 
 ## Installation from build
 ```bash
-./bin/kibi plugin -i elastalert -u https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/5251/artifacts/file/build/elastalert-0.0.6.zip
+./bin/kibana plugin -i elastalert -u https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/5251/artifacts/file/build/elastalert-0.0.6.zip
 ```
 
 Append to the `config/kibana.yml` file the host of ElastAlert server. 
