@@ -1,4 +1,4 @@
-# ElastAlert Kibana plugin
+# ElastAlert Kibana plugin for Kibana5
 
 ## Installation from build
 ```bash
