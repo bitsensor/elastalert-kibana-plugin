@@ -1,4 +1,5 @@
 import CodeMirror from 'codemirror';
+import $ from 'jquery';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/yaml';
 import 'codemirror/theme/material.css';
@@ -15,6 +16,11 @@ window.CodeMirror = CodeMirror;
 
 modules
   .get('app/elastalert', ['ui.codemirror', 'cfp.hotkeys'])
+  .directive('full', function () {
+    return function ($scope, $element, $attrs) {
+      $element.height($(window).height() - $('.header').outerHeight());
+    };
+  })
   .controller('elastalertEditorController', function ($scope, $location, $routeParams, $interval, $mdToast, $mdDialog, api, hotkeys) {
     const requestStates = {
       STATE_IDLE: 'idle',

@@ -13,7 +13,6 @@ modules
 
     function loadRules() {
       $scope.state = STATE_LOADING;
-
       api({
         method: 'GET',
         url: 'rules'

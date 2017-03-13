@@ -5,13 +5,6 @@ import './root_controller';
 import './less/app.less';
 import './sections';
 
-const tabs = [
-  {
-    id: 'rules',
-    title: 'Rules'
-  }
-];
-
 routes.enable();
 routes.otherwise({
   redirectTo: '/rules'
