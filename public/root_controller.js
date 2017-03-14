@@ -1,6 +1,6 @@
 import 'angular-aria';
 import 'angular-animate';
-import 'angular-material';
+import 'angular-material/angular-material.min.js';
 import 'angular-material/angular-material.css';
 import './services/api';
 import modules from 'ui/modules';
