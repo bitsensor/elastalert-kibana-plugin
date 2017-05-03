@@ -6,7 +6,7 @@ modules
   .service('api', function ($http) {
     return function (request) {
       if (request && request.url) {
-        request.url = path.join('/api/elastalert', request.url);
+        request.url = path.join('../api/elastalert', request.url);
       }
 
       return $http(request);
