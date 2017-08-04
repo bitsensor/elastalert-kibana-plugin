@@ -36,12 +36,12 @@ modules
         .then(function () {
           let deleteStack = rules.slice();
 
-          rules.forEach(function (rule) {
+          rules.forEach(function (id) {
             api({
               method: 'DELETE',
-              url: `rules/${rule}`
+              url: `rules/${id}`
             }).then(function () {
-              let index = deleteStack.indexOf(rule);
+              let index = deleteStack.indexOf(id);
               deleteStack.splice(index, 1);
 
               if (deleteStack.length === 0) {
@@ -75,8 +75,38 @@ modules
     }
 
     function selectRule(rule) {
-      $scope.selectedRules = [rule];
+      const ruleIdx = $scope.selectedRules.indexOf(rule);
+      if (ruleIdx > -1) {
+        $scope.selectedRules.splice(ruleIdx, 1);
+      } else {
+        $scope.selectedRules.push(rule);
+      }
     }
+
+    // EXPERIMENTAL
+    // function changeRuleState(rule, ruleState) {
+    //   api({
+    //     method: 'PUT',
+    //     url: `templates/${rule}`,
+    //     data: {
+    //       state: ruleState
+    //     }
+    //   }).then(function (result) {
+    //     showEditToast(rule, ruleState);
+    //   }).catch(function (errorResult) {
+    //     console.error(`Unable to change rule state ${errorResult}`);
+    //   });
+    // }
+
+    // function showEditToast(id, ruleState) {
+    //   $mdToast.show(
+    //     $mdToast.simple()
+    //       .textContent(`Switched ${id} ${ruleState ? 'on' : 'off'}.`)
+    //       .position('bottom right')
+    //       .action('Close')
+    //       .toastClass('toast-dark-background')
+    //   );
+    // }
 
     function openRuleEditor(rule) {
       $location.url(`editor/rule/${rule}`);
@@ -101,6 +131,7 @@ modules
     $scope.openRuleEditor = openRuleEditor;
     $scope.deleteRules = deleteRules;
     $scope.newRule = newRule;
+    // $scope.changeRuleState = changeRuleState;
 
     loadRules();
   });

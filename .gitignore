@@ -1,4 +1,6 @@
-npm-debug.log*
-node_modules/
-.idea/
-*.iml
+.node_binaries 
+npm-debug.log* 
+node_modules/ 
+.idea/ 
+*.iml 
+\.DS_Store
