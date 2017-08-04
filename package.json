@@ -1,6 +1,6 @@
 {
   "name": "elastalert",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "This plugin is Kibana plugin UI for the alerting system ElastAlert.",
   "main": "index.js",
   "kibana": {
