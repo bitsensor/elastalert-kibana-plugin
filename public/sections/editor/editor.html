@@ -22,6 +22,31 @@
     <div class="left-wrap"></div>
     <div ui-codemirror="editorOptions" class="code-editor" ng-model="ruleContent"></div>
     <div class="right-wrap">
+      <div class="template-options">
+        <md-toolbar class="toolbar-transparent">
+          <div class="md-toolbar-tools">
+            <h2>
+              <span>Templates</span>
+            </h2>
+          </div>
+        </md-toolbar>
+        <md-grid-list
+                md-cols="1" 
+                md-row-height="4:1"
+                md-gutter="15px">
+          <md-grid-tile class="template-button"
+                        ng-repeat="template in templates"
+                        md-rowspan="1"
+                        md-colspan="1"
+                        ng-click="insertTemplate(template)">
+            <div class="template">
+              <div class="md-subhead">
+                {{ template }}
+              </div>
+            </div>
+          </md-grid-tile>
+        </md-grid-list>
+      </div>
       <div class="editor-console-view">
         <md-toolbar class="toolbar-transparent">
           <div class="md-toolbar-tools">

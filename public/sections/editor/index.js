@@ -47,6 +47,40 @@ modules
       });
     }
 
+    function loadTemplates() {
+      $scope.state.templates = requestStates.STATE_LOADING;
+
+      api({
+        method: 'GET',
+        url: `templates`
+      }).then(function (result) {
+        let index = result.data;
+        $scope.state.templates = requestStates.STATE_FINISHED;
+        $scope.templates = index.templates;
+        $scope.justLoaded = true;
+      }).catch(function (error) {
+        console.error(error);
+        $scope.state.templates = requestStates.STATE_ERROR;
+      });
+    }
+
+    function insertTemplate(id) {
+      $scope.state.rule = requestStates.STATE_LOADING;
+
+      api({
+        method: 'GET',
+        url: `templates/${id}`
+      }).then(function (result) {
+        let ruleContent = result.data;
+        $scope.state.rule = requestStates.STATE_FINISHED;
+        $scope.ruleContent = ruleContent;
+        $scope.justLoaded = true;
+      }).catch(function (error) {
+        console.error(error);
+        $scope.state.rule = requestStates.STATE_ERROR;
+      });
+    }
+
     function switchConsoleState(state) {
       if (typeof state === 'undefined') {
         $scope.consoleExpanded = !$scope.consoleExpanded;
@@ -100,7 +134,7 @@ modules
         .placeholder('Rule Name')
         .ariaLabel('Rule Name')
         .ok('Create rule')
-        .cancel('I don\'t want to create a rule');
+        .cancel('Cancel');
 
       return $mdDialog.show(confirm);
     }
@@ -198,9 +232,12 @@ modules
     };
 
     $scope.switchConsoleState = switchConsoleState;
+    $scope.insertTemplate = insertTemplate;
     $scope.saveRule = saveRule;
     $scope.backToOverview = backToOverview;
     $scope.testRule = testRule;
+
+    loadTemplates();
 
     if ($routeParams.id) {
       loadRuleContent($routeParams.id);
