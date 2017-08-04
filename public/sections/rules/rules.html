@@ -12,6 +12,9 @@
       <md-button class="md-icon-button" ng-click="deleteRules($event, selectedRules)" ng-if="selectedRules.length > 0">
         <md-icon>delete</md-icon>
       </md-button>
+      <md-button class="md-icon-button" ng-click="openRuleEditor(selectedRules[0])" ng-if="selectedRules.length == 1">
+        <md-icon>edit</md-icon>
+      </md-button>
       <md-button class="md-icon-button" ng-click="loadRules()">
         <md-icon>refresh</md-icon>
       </md-button>
@@ -74,12 +77,13 @@
                   ng-class="{ 'selected md-whiteframe-5dp': selectedRules.includes(rule),
                               'md-whiteframe-1dp': !selectedRules.includes(rule) }">
       <div class="file">
-        <div class="file-icon-container">
-          <md-icon class="mi-small mi-contain">report</md-icon>
-        </div>
         <div class="file-name md-subhead">
           {{ rule }}
         </div>
+        <!-- EXPERIMENTAL  -->
+        <!-- <div class="rule-state-switch" ng-click="$event.stopPropagation()">
+          <md-switch ng-model="rule.state" aria-label="Switch 1" ng-change="changeRuleState(rule, rule.state)"></md-switch>
+        </div> -->
       </div>
     </md-grid-tile>
     <md-grid-tile class="grid-item md-whiteframe-1dp"
