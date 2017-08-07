@@ -32,8 +32,9 @@
         </md-toolbar>
         <md-grid-list
                 md-cols="1" 
-                md-row-height="4:1"
-                md-gutter="15px">
+                md-row-height="8:1"
+                md-gutter="15px"
+                style="min-width: 210px">
           <md-grid-tile class="template-button"
                         ng-repeat="template in templates"
                         md-rowspan="1"
@@ -41,7 +42,7 @@
                         ng-click="insertTemplate(template)">
             <div class="template">
               <div class="md-subhead">
-                {{ template }}
+                <span>{{ template }}</span>
               </div>
             </div>
           </md-grid-tile>
