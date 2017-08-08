@@ -64,6 +64,7 @@ modules
 
     function insertTemplate(id) {
       $scope.state.rule = requestStates.STATE_LOADING;
+      id = id.replace(/\b\w/g, l => l.toLowerCase()).replace(/ /g, '_');
 
       api({
         method: 'GET',
