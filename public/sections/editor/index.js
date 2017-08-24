@@ -49,8 +49,12 @@ modules
         url: `templates`
       }).then(function (result) {
         let index = result.data;
+        $scope.templates = [];
         $scope.state.templates = requestStates.STATE_FINISHED;
-        $scope.templates = index.templates;
+        _.forEach(index.templates, function (template) {
+          template = template.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+          $scope.templates.push(template);
+        });
         $scope.justLoaded = true;
       }).catch(function (error) {
         console.error(error);
@@ -60,6 +64,7 @@ modules
 
     function insertTemplate(id) {
       $scope.state.rule = requestStates.STATE_LOADING;
+      id = id.replace(/\b\w/g, l => l.toLowerCase()).replace(/ /g, '_');
 
       api({
         method: 'GET',
