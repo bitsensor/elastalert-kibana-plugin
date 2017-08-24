@@ -12,6 +12,7 @@ build:
     - patch node_modules/@elastic/plugin-helpers/tasks/build/create_build.js < build_package_without_kibana.patch
     - patch node_modules/@elastic/plugin-helpers/tasks/build/create_package.js < create_package_without_kibana.patch
     - npm run build --quiet
+    - cp build/elastalert-*.zip build/elastalert-latest.zip
   artifacts:
     paths:
       - build/*.zip
