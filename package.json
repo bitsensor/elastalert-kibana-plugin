@@ -4,7 +4,7 @@
   "description": "This plugin is Kibana plugin UI for the alerting system ElastAlert.",
   "main": "index.js",
   "kibana": {
-    "version": "5.3.0"
+    "version": "5.4.0"
   },
   "scripts": {
     "lint": "eslint",
@@ -15,8 +15,8 @@
     "postinstall": "plugin-helpers postinstall"
   },
   "devDependencies": {
-    "@elastic/eslint-config-kibana": "0.0.2",
-    "@elastic/plugin-helpers": "^6.0.0",
+    "@elastic/eslint-config-kibana": "^0.6.1",
+    "@elastic/plugin-helpers": "^7.0.0",
     "babel-eslint": "4.1.8",
     "chai": "^3.5.0",
     "eslint": "1.10.3",
