@@ -6,14 +6,11 @@ build:
   image: node
   stage: build
   script:
-    - >
-      sed -i 's/"version": "kibana"/"version": "4.6"/g' package.json
     - npm install --quiet
-    - npm run build --quiet
-    - cp build/elastalert-*.zip build/elastalert-latest.zip
+    - ./build_5.0-5.4_range.sh
   artifacts:
     paths:
-      - build/*.zip
+      - artifact/*.zip
 
 mirror:github:
   image: debian
