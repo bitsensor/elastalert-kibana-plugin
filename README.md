@@ -1,5 +1,7 @@
 # ElastAlert Kibana plugin
 
+![img](https://www.bitsensor.io/assets/img/screenshots/template.gif)
+
 ## Installation from build
 Kibana 4
 ```bash
