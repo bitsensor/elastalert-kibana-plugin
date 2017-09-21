@@ -13,6 +13,11 @@ Kibana 5
 ./bin/kibana-plugin install https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/artifacts/kibana5/raw/artifact/elastalert-`pwd | grep -Po '(?<=kibana-)[^-]*'`-latest.zip?job=build
 ```
 
+Kibana 5 (if you have renamed the `kibana-5.x.x` folder
+```bash
+./bin/kibana-plugin install https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/artifacts/kibana5/raw/artifact/elastalert-5.x.x-latest.zip?job=build
+```
+
 Append to the `config/kibana.yml` file the host of ElastAlert server, if it is different than localhost. Typically the case if you are running on macOS. 
 ```
 elastalert.serverHost: docker.for.mac.localhost
