@@ -7,14 +7,14 @@ import 'codemirror/addon/scroll/simplescrollbars';
 import 'codemirror/addon/scroll/simplescrollbars.css';
 import 'angular-ui-codemirror';
 import 'angular-hotkeys';
-import modules from 'ui/modules';
+import { uiModules } from 'ui/modules';
 import routes from 'ui/routes';
 import html from './editor.html';
 import './editor.less';
 
 window.CodeMirror = CodeMirror;
 
-modules
+uiModules
   .get('app/elastalert', ['ui.codemirror', 'cfp.hotkeys'])
   .directive('full', function () {
     return function ($scope, $element, $attrs) {
