@@ -3,9 +3,9 @@ import 'angular-animate';
 import 'angular-material/angular-material.min.js';
 import 'angular-material/angular-material.css';
 import './services/api';
-import modules from 'ui/modules';
+import { uiModules } from 'ui/modules';
 
-modules
+uiModules
   .get('app/elastalert', ['ngMaterial'])
   .controller('elastalertRootController', function ($scope, $location) {
   })

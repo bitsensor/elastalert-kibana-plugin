@@ -1,9 +1,9 @@
-import modules from 'ui/modules';
+import { uiModules } from 'ui/modules';
 import routes from 'ui/routes';
 import html from './rules.html';
 import './rules.less';
 
-modules
+uiModules
   .get('app/elastalert')
   .controller('elastalertRulesController', function ($scope, $location, $mdToast, $mdDialog, api) {
     const STATE_IDLE = 'idle';

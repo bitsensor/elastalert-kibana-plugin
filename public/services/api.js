@@ -1,7 +1,7 @@
-import modules from 'ui/modules';
+import { uiModules }  from 'ui/modules';
 import path from 'path';
 
-modules
+uiModules
   .get('app/elastalert')
   .service('api', function ($http) {
     return function (request) {

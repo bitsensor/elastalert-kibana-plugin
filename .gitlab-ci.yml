@@ -7,7 +7,7 @@ build:
   stage: build
   script:
     - npm install --quiet
-    - ./build_5.0-5.4_range.sh
+    - ./build_5.0-5.6_range.sh
   artifacts:
     paths:
       - artifact/*.zip
