@@ -9,10 +9,12 @@
           <span>Editing {{ ruleName }} {{ ruleContentEdited ? '*' : '' }}</span>
         </h2>
         <span flex></span>
-        <md-button class="md-icon-button" ng-click="testRule(ruleContent)">
+        <md-button class="md-icon-button" ng-click="testRule(ruleContent)" aria-label="Test rule">
+          <md-tooltip>Test the rule</md-tooltip>
           <md-icon>play_arrow</md-icon>
         </md-button>
-        <md-button class="md-icon-button" ng-click="saveRule(ruleName)">
+        <md-button class="md-icon-button" ng-click="saveRule(ruleName)" aria-label="Save Rule">
+          <md-tooltip>Save the rule</md-tooltip>
           <md-icon>save</md-icon>
         </md-button>
       </div>
