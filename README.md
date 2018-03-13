@@ -10,7 +10,7 @@ Kibana 4
 
 Kibana 5
 ```bash
-./bin/kibana-plugin install https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/artifacts/kibana5/raw/artifact/elastalert-`pwd | grep -Po '(?<=kibana-)[^-]*'`-latest.zip?job=build
+sudo ./bin/kibana-plugin install https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/artifacts/kibana5/raw/artifact/elastalert-`sudo ./bin/kibana --version`-latest.zip?job=build
 ```
 
 Kibana 5 (if you have renamed the `kibana-5.x.x` folder
