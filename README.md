@@ -1,34 +1,18 @@
-# ElastAlert Kibana plugin for Kibana5
+# ElastAlert Kibana plugin
 
-## Installation from build
+![img](https://www.bitsensor.io/assets/img/screenshots/template.gif)
+
+## Requirements
+- Our [ElastAlert server](https://github.com/bitsensor/elastalert) fork
+- The latest release of [Kibana 5.6](https://github.com/elastic/kibana/tree/5.6)
+
+## Installation
 ```bash
-./bin/kibana-plugin install https://github.com/Baoban/elastalert-kibana-plugin/raw/kibana5/build/elastalert-0.0.6.zip
+./bin/kibana plugin -i elastalert -u 'https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/artifacts/5.6/raw/build/elastalert-kibana-plugin-latest.zip?job=build'
 ```
 
-Append to the `config/kibana.yml` file the host of ElastAlert server. 
+If your ElastAlert server is running on something else than localhost change the following in `config/kibana.yml`: 
+
 ```
-elastalert.serverHost: localhost
+elastalert.serverHost: 123.0.0.1
 ```
-
-## Building artifact from source
-
-```bash
-npm run build
-```
-
-## Development
-Run the browser tests in a real web browser, or mocha. 
-```bash
-npm run test:browser
-npm run test:server
-```
-
-## Kibana Plugin Development
-See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md) for instructions setting up your development environment. Once you have completed that, use the following npm tasks within Kibana.
-
-
-## Development Steps
-
-- run elasticsearch
-- run elastalert-server
-- npm start

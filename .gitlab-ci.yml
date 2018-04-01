@@ -7,10 +7,12 @@ build:
   stage: build
   script:
     - npm install --quiet
-    - ./build_5.0-5.6_range.sh
+    - npm run build --quiet
+    - mkdir artifact
+    - cp build/elastalert-kibana-plugin-*.zip artifact/elastalert-kibana-plugin-latest.zip
   artifacts:
     paths:
-      - artifact/*.zip
+      - artifact/elastalert-kibana-plugin-latest.zip
 
 mirror:github:
   image: debian
