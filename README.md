@@ -1,6 +1,6 @@
 # ElastAlert Kibana plugin for Kibana 5.6.8
 
-![img](https://www.bitsensor.io/assets/img/screenshots/template.gif)
+![img](https://raw.githubusercontent.com/bitsensor/elastalert-kibana-plugin/master/kibana-elastalert-plugin-showcase.gif)
 
 ## Requirements
 - Our [ElastAlert server](https://github.com/bitsensor/elastalert) fork
