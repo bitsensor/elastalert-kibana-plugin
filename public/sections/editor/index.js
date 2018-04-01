@@ -1,7 +1,7 @@
 import CodeMirror from 'codemirror';
 import $ from 'jquery';
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/mode/yaml';
+import 'codemirror/mode/yaml/yaml';
 import 'codemirror/theme/material.css';
 import 'codemirror/addon/scroll/simplescrollbars';
 import 'codemirror/addon/scroll/simplescrollbars.css';

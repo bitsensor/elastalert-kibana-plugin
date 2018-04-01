@@ -1,10 +1,10 @@
 {
   "name": "elastalert-kibana-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This plugin is Kibana plugin UI for the alerting system ElastAlert.",
   "main": "index.js",
   "kibana": {
-    "version": "5.6.9"
+    "version": "6.2.3"
   },
   "scripts": {
     "lint": "eslint",
@@ -24,15 +24,16 @@
   },
   "dependencies": {
     "@bitsensor/elastalert": "^0.0.5",
-    "angular": "1.4.7",
-    "angular-animate": "1.4.7",
-    "angular-aria": "1.4.7",
+    "angular": "1.6.5",
+    "angular-animate": "1.6.5",
+    "angular-aria": "1.6.5",
     "angular-hotkeys": "^1.7.0",
-    "angular-material": "^1.1.0",
+    "angular-material": "1.1.6",
+    "angular-messages": "1.6.9",
     "angular-ui-codemirror": "^0.3.0",
     "boom": "^4.0.0",
     "codemirror": "^5.18.2",
-    "material-colors": "^1.1.1",
+    "material-colors": "1.2.5",
     "micromatch": "^2.3.11",
     "path": "^0.12.7"
   }
