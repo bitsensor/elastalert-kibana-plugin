@@ -8,7 +8,7 @@
 
 ## Installation
 ```bash
-./bin/kibana plugin -i elastalert -u 'https://git.bitsensor.io/front-end/elastalert-kibana-plugin/-/jobs/artifacts/4.6/download?job=build'
+./bin/kibana plugin -i elastalert -u 'https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/artifacts/4.6/raw/build/elastalert-kibana-plugin-latest.zip?job=build'
 ```
 
 If your ElastAlert server is running on something else than localhost change the following in `config/kibana.yml`: 
