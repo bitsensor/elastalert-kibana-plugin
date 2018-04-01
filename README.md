@@ -1,5 +1,5 @@
 # ElastAlert Kibana plugin
-![img](https://www.bitsensor.io/assets/img/screenshots/template.gif)
+![img](https://raw.githubusercontent.com/bitsensor/elastalert-kibana-plugin/master/kibana-elastalert-plugin-showcase.gif)
 
 ## Installation
 Check the installation guide inside the branch that matches your Kibana version.
