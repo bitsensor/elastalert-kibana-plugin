@@ -1,6 +1,9 @@
-# ElastAlert Kibana plugin for Kibana 6.2.3
+# ElastAlert Kibana plugin for Kibana 6.2.3 (experimental)
 
 ![img](https://raw.githubusercontent.com/bitsensor/elastalert-kibana-plugin/master/kibana-elastalert-plugin-showcase.gif)
+
+# Experimental
+Support for Kibana 6.2.3 is currently experimental and might not fully work yet. Please report any issues.
 
 ## Requirements
 - Our [ElastAlert server](https://github.com/bitsensor/elastalert) fork
