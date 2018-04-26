@@ -3,7 +3,7 @@ stages:
   - mirror
 
 build:
-  image: node
+  image: node:alpine
   stage: build
   script:
     - npm install --quiet
@@ -15,10 +15,10 @@ build:
       - artifact/elastalert-kibana-plugin-latest.zip
 
 mirror:github:
-  image: debian
+  image: alpine:latest
   stage: mirror
   script:
-    - apt-get update && apt-get install -y git
+    - apk --update --no-cache add git
     - git clone --mirror https://git.bitsensor.io/front-end/elastalert-kibana-plugin.git mirror-github
     - cd mirror-github
     - git remote add github https://$MIRROR_GITHUB_USER:$MIRROR_GITHUB_PASSWORD@$MIRROR_GITHUB_URL
