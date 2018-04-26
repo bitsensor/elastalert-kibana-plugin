@@ -6,7 +6,7 @@ build:
   image: node:alpine
   stage: build
   script:
-    - apk --update --no-cache add python
+    - apk --update --no-cache add python make gcc g++
     - npm install --quiet
     - npm run build --quiet
     - mkdir artifact
