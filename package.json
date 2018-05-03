@@ -4,7 +4,7 @@
   "description": "This plugin is Kibana plugin UI for the alerting system ElastAlert.",
   "main": "index.js",
   "kibana": {
-    "version": "6.2.3"
+    "version": "6.2.4"
   },
   "scripts": {
     "lint": "eslint",
