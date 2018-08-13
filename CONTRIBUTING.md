@@ -1,6 +1,6 @@
 ## Development
 
-See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md) for instructions setting up your development environment. Once you have completed that, git clone our plugin into a folder next to your cloned kibana folder. Once that is done you can use the commands below.
+See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md) for instructions setting up your development environment. Once you have completed that, you can use the commands below.
 
   - `yarn kbn bootstrap`
 
