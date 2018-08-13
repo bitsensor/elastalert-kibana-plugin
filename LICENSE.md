@@ -1,22 +1,20 @@
-The 3-clause BSD license (Modified)
-===================================
+# The 3-clause BSD license (Modified)
 
-Copyright © 2016, BitSensor B.V.
+Copyright © 2018, BitSensor B.V.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 
-  * Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-  * Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer in the
-    documentation and/or other materials provided with the distribution.
-  * Neither the name of BitSensor, BitSensor B.V. nor the
-    names of its contributors may be used to endorse or promote products
-    derived from this software without specific prior written permission.
-    However, those names can be used when explicitely stating the use of
-    the ElastAlert Server Plugin (which can be rephrased as the Alerting
-    Plugin).
+- Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+- Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+- Neither the name of BitSensor, BitSensor B.V. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+  However, those names can be used when explicitly stating the use of
+  the ElastAlert Kibana Plugin.
 
 THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS "AS IS" AND ANY
 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
