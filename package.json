@@ -1,11 +1,11 @@
 {
   "name": "elastalert-kibana-plugin",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Create, test and edit ElastAlert rules within Kibana.",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE.md",
   "kibana": {
-    "version": "6.3.3",
+    "version": "6.4.1",
     "templateVersion": "1.0.0"
   },
   "scripts": {
@@ -33,6 +33,6 @@
     "expect.js": "^0.3.1"
   },
   "dependencies": {
-    "@elastic/eui": "^3.5.1"
+    "@elastic/eui": "^3.7.0"
   }
 }
