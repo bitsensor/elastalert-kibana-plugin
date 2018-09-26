@@ -13,6 +13,7 @@ import {
   EuiFieldText,
   EuiSpacer
 } from '@elastic/eui';
+import 'brace/mode/yaml';
 import 'brace/theme/github';
 import 'brace/ext/language_tools';
 import { addToast } from '../../toast/toast';
@@ -139,6 +140,7 @@ export default class Editor extends Component {
                 />
               </EuiFormRow>
               <EuiCodeEditor
+                mode="yaml"
                 theme="github"
                 width="100%"
                 height="400px"
