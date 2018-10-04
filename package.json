@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE.md",
   "kibana": {
-    "version": "6.4.2",
+    "version": "6.4.3",
     "templateVersion": "1.0.0"
   },
   "scripts": {
