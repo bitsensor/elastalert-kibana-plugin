@@ -19,6 +19,7 @@ import 'brace/ext/language_tools';
 import { addToast } from '../../toast/toast';
 import { loadRules } from '../list/list';
 import { Console } from '../../console';
+import { saveRule as saveRuleLib } from '../../../lib/elastalert';
 
 export default class Editor extends Component {
   constructor(props) {
@@ -42,35 +43,37 @@ export default class Editor extends Component {
     });
   }
 
+  getRuleID = () => {
+    return this.props.editorMode === 'edit' ? this.props.rule : this.state.ruleName;
+  }
+
+  onSaveRuleSucces = () => {
+    const ruleID = this.getRuleID();
+    this.setState({ saving: false });
+    addToast(
+      'Saved successfully',
+      `Rule '${ruleID}' was saved successfully`,
+      'success'
+    );
+    this.closeModal();
+    loadRules();
+  }
+
+  onSaveRuleFail = (e) => {
+    const ruleID = this.getRuleID();
+    this.setState({ saving: false });
+    addToast(
+      'Failed to save',
+      `Rule '${ruleID}' could not be saved: (${e.status}) ${e.statusText}`,
+      'danger'
+    );
+  }
+
   saveRule = () => {
     const { httpClient } = this.props;
     this.setState({ saving: true });
-    const ruleID = this.props.editorMode === 'edit' ? this.props.rule : this.state.ruleName;
-
-    httpClient
-      .post(`../api/elastalert/rules/${ruleID}`, {
-        yaml: this.state.value
-      })
-      .then(resp => {
-        if (resp.status === 200) {
-          this.setState({ saving: false });
-          addToast(
-            'Saved successfully',
-            `Rule '${ruleID}' was saved successfully`,
-            'success'
-          );
-          this.closeModal();
-          loadRules();
-        }
-      })
-      .catch(e => {
-        this.setState({ saving: false });
-        addToast(
-          'Failed to save',
-          `Rule '${ruleID}' could not be saved: (${e.status}) ${e.statusText}`,
-          'danger'
-        );
-      });
+    const ruleID = this.getRuleID();
+    saveRuleLib(httpClient, ruleID, this.state.value, this.onSaveRuleSucces, this.onSaveRuleFail);
   };
 
   testRule = () => {

@@ -18,3 +18,18 @@ export const deleteRule = (http, rules, onSuccess, onFail) => {
       });
   });
 };
+
+export const saveRule = (http, ruleID, yaml, onSucces, onFail) => {
+  http
+    .post(`../api/elastalert/rules/${ruleID}`, {
+      yaml: yaml
+    })
+    .then(resp => {
+      if (resp.status === 200) {
+        onSucces();
+      }
+    })
+    .catch(e => {
+      onFail(e);
+    });
+};
