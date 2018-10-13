@@ -33,3 +33,13 @@ export const saveRule = (http, ruleID, yaml, onSucces, onFail) => {
       onFail(e);
     });
 };
+
+export const copyRule = (http, originalRuleID, newRuleID, onSucces, onFail) => {
+  http.get(`../api/elastalert/rules/${originalRuleID}`).then(resp => {
+    // Get content of original rule
+    const yaml = resp.data;
+
+    // Save new rule with original content
+    saveRule(http, newRuleID, yaml, onSucces, onFail);
+  });
+};
