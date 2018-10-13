@@ -16,7 +16,7 @@ import {
 import { Item } from './item';
 import { Editor } from '../editor';
 import { Dangerous } from '../../modal';
-import { deleteRule } from '../../../lib/elastalert';
+import { deleteRule, copyRule } from '../../../lib/elastalert';
 import { addToast } from '../../toast/toast';
 
 let loadRulesHandler;
@@ -52,6 +52,25 @@ export default class List extends Component {
     }
   };
 
+  copyRule = (ruleID, newRuleID) => {
+    const onSucces = () => {
+      addToast(
+        'Copied rule successfully',
+        `Rule '${ruleID}' was successfully copied with new name '${newRuleID}'`,
+        'success',
+      );
+      loadRules();
+    };
+    const onFail = (e) => {
+      addToast(
+        'Copying failed',
+        `Rule could not be copied: (${e.status}) ${e.statusText}`,
+        'danger'
+      );
+    };
+    copyRule(this.props.httpClient, ruleID, newRuleID, onSucces, onFail);
+  }
+
   componentDidMount() {
     this.loadRules();
   }
@@ -74,7 +93,7 @@ export default class List extends Component {
       return this.state.rules.map((rule, index) => {
         return (
           <EuiFlexItem key={index}>
-            <Item rule={rule} handler={this.selectRule} />
+            <Item rule={rule} handler={this.selectRule} copyHandler={this.copyRule}/>
           </EuiFlexItem>
         );
       });
