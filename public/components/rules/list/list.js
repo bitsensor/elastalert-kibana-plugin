@@ -53,7 +53,7 @@ export default class List extends Component {
   };
 
   copyRule = (ruleID, newRuleID) => {
-    const onSucces = () => {
+    const onSuccess = () => {
       addToast(
         'Copied rule successfully',
         `Rule '${ruleID}' was successfully copied with new name '${newRuleID}'`,
@@ -68,7 +68,7 @@ export default class List extends Component {
         'danger'
       );
     };
-    copyRule(this.props.httpClient, ruleID, newRuleID, onSucces, onFail);
+    copyRule(this.props.httpClient, ruleID, newRuleID, onSuccess, onFail);
   }
 
   componentDidMount() {

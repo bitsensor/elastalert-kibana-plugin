@@ -19,14 +19,14 @@ export const deleteRule = (http, rules, onSuccess, onFail) => {
   });
 };
 
-export const saveRule = (http, ruleID, yaml, onSucces, onFail) => {
+export const saveRule = (http, ruleID, yaml, onSuccess, onFail) => {
   http
     .post(`../api/elastalert/rules/${ruleID}`, {
       yaml: yaml
     })
     .then(resp => {
       if (resp.status === 200) {
-        onSucces();
+        onSuccess();
       }
     })
     .catch(e => {
@@ -34,7 +34,7 @@ export const saveRule = (http, ruleID, yaml, onSucces, onFail) => {
     });
 };
 
-export const copyRule = (http, originalRuleID, newRuleID, onSucces, onFail) => {
+export const copyRule = (http, originalRuleID, newRuleID, onSuccess, onFail) => {
   // TODO: Check if rule with newRuleID should probably be done server side
   // This should probably be done from a new endpoint in the ElastAlert API
   http.get(`../api/elastalert/rules/${newRuleID}`).then(() => {
@@ -51,7 +51,7 @@ export const copyRule = (http, originalRuleID, newRuleID, onSucces, onFail) => {
         const yaml = resp.data;
 
         // Save new rule with original content
-        saveRule(http, newRuleID, yaml, onSucces, onFail);
+        saveRule(http, newRuleID, yaml, onSuccess, onFail);
       }).catch(e => onFail(e));
     } else {
       // In case a different error happened on the server

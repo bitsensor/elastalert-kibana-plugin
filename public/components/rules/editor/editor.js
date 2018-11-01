@@ -47,7 +47,7 @@ export default class Editor extends Component {
     return this.props.editorMode === 'edit' ? this.props.rule : this.state.ruleName;
   }
 
-  onSaveRuleSucces = () => {
+  onSaveRuleSuccess = () => {
     const ruleID = this.getRuleID();
     this.setState({ saving: false });
     addToast(
@@ -73,7 +73,7 @@ export default class Editor extends Component {
     const { httpClient } = this.props;
     this.setState({ saving: true });
     const ruleID = this.getRuleID();
-    saveRuleLib(httpClient, ruleID, this.state.value, this.onSaveRuleSucces, this.onSaveRuleFail);
+    saveRuleLib(httpClient, ruleID, this.state.value, this.onSaveRuleSuccess, this.onSaveRuleFail);
   };
 
   testRule = () => {
