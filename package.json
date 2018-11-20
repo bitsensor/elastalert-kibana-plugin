@@ -5,12 +5,13 @@
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE.md",
   "kibana": {
-    "version": "6.4.3",
+    "version": "6.5.1",
     "templateVersion": "1.0.0"
   },
   "scripts": {
     "preinstall": "node ../../kibana/preinstall_check",
     "kbn": "node ../../kibana/scripts/kbn",
+    "es": "node ../../kibana/scripts/es",
     "lint": "eslint .",
     "start": "plugin-helpers start",
     "test:server": "plugin-helpers test:server",
@@ -26,6 +27,7 @@
     "eslint-plugin-babel": "^5.2.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.22.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-mocha": "^5.2.0",
     "eslint-plugin-no-unsanitized": "^3.0.2",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
@@ -33,6 +35,6 @@
     "expect.js": "^0.3.1"
   },
   "dependencies": {
-    "@elastic/eui": "^4.4.1"
+    "@elastic/eui": "^5.1.0"
   }
 }
