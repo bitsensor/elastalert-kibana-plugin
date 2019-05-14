@@ -1,11 +1,11 @@
 {
   "name": "elastalert-kibana-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create, test and edit ElastAlert rules within Kibana.",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE.md",
   "kibana": {
-    "version": "6.7.0",
+    "version": "7.0.0",
     "templateVersion": "1.0.0"
   },
   "scripts": {
@@ -21,20 +21,20 @@
   "devDependencies": {
     "@elastic/eslint-config-kibana": "link:../../kibana/packages/eslint-config-kibana",
     "@elastic/eslint-import-resolver-kibana": "link:../../kibana/packages/kbn-eslint-import-resolver-kibana",
+    "@kbn/expect": "link:../../kibana/packages/kbn-expect",
     "@kbn/plugin-helpers": "link:../../kibana/packages/kbn-plugin-helpers",
     "babel-eslint": "^9.0.0",
     "eslint": "^5.6.0",
     "eslint-plugin-babel": "^5.2.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^21.22.1",
+    "eslint-plugin-jest": "^21.26.2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-mocha": "^5.2.0",
     "eslint-plugin-no-unsanitized": "^3.0.2",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
-    "eslint-plugin-react": "^7.11.1",
-    "expect.js": "^0.3.1"
+    "eslint-plugin-react": "^7.11.1"
   },
   "dependencies": {
-    "@elastic/eui": "^6.8.0"
+    "@elastic/eui": "^11.0.1"
   }
 }

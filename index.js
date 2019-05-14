@@ -2,12 +2,14 @@ import elastAlertAPI from './server/routes/elastalert';
 
 export default function (kibana) {
   return new kibana.Plugin({
-    name: 'elastalert-kibana-plugin',
+    id: 'elastalert-kibana-plugin',
+    require: ['kibana', 'elasticsearch'],
     uiExports: {
       app: {
         title: 'ElastAlert',
         description: 'A way to create, test and edit ElastAlert rules within Kibana.',
-        main: 'plugins/elastalert-kibana-plugin/app'
+        main: 'plugins/elastalert-kibana-plugin/app',
+        euiIconType: 'alert'
       }
     },
     config(Joi) {
