@@ -22,7 +22,7 @@ Check the [releases](https://github.com/bitsensor/elastalert-kibana-plugin/relea
 By default the plugin will connect to `localhost:3030`. If your ElastAlert server is running on a different host or port add/change the following options in your `config/kibana.yml` file: 
 
 ```
-elastalert-kibana-plugin.serverHost: 123.0.0.1
+elastalert-kibana-plugin.serverHost: 127.0.0.1
 elastalert-kibana-plugin.serverPort: 9000
 ```
 
